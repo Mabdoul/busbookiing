@@ -26,7 +26,7 @@ const DepartTime = () => {
 
               <option value="04:00 AM">04:00 AM</option>
 
-              <option value="04:00 AM">04:00 AM</option>
+              <option value="04:00  AM">04:00 AM</option>
             </select>
           </div>
           
