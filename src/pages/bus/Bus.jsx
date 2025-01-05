@@ -5,7 +5,6 @@ import Bus3 from "../../assets/bus3.png";
 import Bus4 from "../../assets/bus4.png";
 import Bus5 from "../../assets/bus5.png";
 import Bus6 from "../../assets/bus6.png";
-import Bus7 from "../../assets/bus7.png";
 
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";

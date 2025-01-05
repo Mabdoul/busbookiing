@@ -4,6 +4,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import HomeContainer from './pages/home_container/HomeContainer';
 import Bus from './pages/bus/Bus';
+import Detail from './pages/bus/Detail'
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeContainer />} />
             <Route path="/bus" element={<Bus />} />
+            <Route path="/bus/bus-details" element={<Detail />} />
           </Routes>
           {/* Footer */}
           <Footer />
