@@ -56,7 +56,15 @@ const Destination = () => {
                 Your Destination
             </h1>
             <div className="w-full flex items-center gao-x-3">
-                
+                <div className="w-fit text-base font-semiblod">
+                    From : - <span className="ml-1.5 font-medium">{from}</span>
+                </div>
+                <div className="flex-1">
+                    <div className="w-full h-[1px] border border-dashed border-neutral-200 dar:border-neutral-800/80"></div>
+                </div>
+                <div className="w-fit text-base font-semiblod">
+                    To : - <span className="ml-1.5 font-medium">{to}</span>
+                </div>
             </div>
         </div>
       )}
