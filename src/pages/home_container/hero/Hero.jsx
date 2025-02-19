@@ -1,8 +1,10 @@
 import React from "react";
 import Bus2 from "../../../assets/bus5.png";
 import { animate, motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
   const imageVariants={
     initial:{
      x:"100%",
@@ -49,9 +51,14 @@ const Hero = () => {
               Find and book you bus tickets with just a few clicks. We offer a
               wide range of bus routes and schedules to suit your needs.
             </motion.p>
-            <motion.button className="w-fit bg-violet-700 hover:bg-violet-800 text-neutral-50 font-medium py-3 px-6 rounded-md ease-in-out duration-300">
-              Reserve Seat Now
-            </motion.button>
+            <motion.button
+      className="w-fit bg-violet-700 hover:bg-violet-800 text-neutral-50 font-medium py-3 px-6 rounded-md ease-in-out duration-300"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      onClick={() => navigate("/bus")} // Navigate to Bus.jsx
+    >
+      Reserve Seat Now
+    </motion.button>
           </motion.dev>
         </motion.dev>
         <div className="w-[70%] h-full rounded-md flex items-end justify-end absolute top-0 right-1 left-100 z-0">
