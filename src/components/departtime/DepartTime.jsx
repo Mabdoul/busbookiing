@@ -23,18 +23,14 @@ const DepartTime = () => {
             >
               <option value="">Select a Time</option>
               <option value="04:00 AM">04:00 AM</option>
-
               <option value="04:00 AM">04:00 AM</option>
-
               <option value="04:00  AM">04:00 AM</option>
             </select>
           </div>
-          
         </div>
       ) : (
         <div className="space-y-5">
-          <div className="w-full flex items-center gao-x-3">
-           
+          <div className="w-full flex items-center gap-x-3">
             <div className="w-fit text-base font-semiblod">
               Bus Depart at: - <span className="ml-1.5 font-medium">{departBus}</span>
             </div>

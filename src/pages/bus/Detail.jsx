@@ -1,12 +1,33 @@
-import React from "react";
-import Bus from "../../assets/bus9.png";
-import { FaStar } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import Destination from "../../components/destination/Destination";
-import DepartTime from "../../components/departtime/DepartTime";
-import Seat from "../../components/seat/Seat";
+import React from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { FaStar } from 'react-icons/fa';
+import Bus from '../../assets/bus9.png';
+import Seat from '../../components/seat/Seat';
+import { Link } from 'react-router-dom';
 
 const Detail = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const from = queryParams.get('from');
+  const to = queryParams.get('to');
+  const navigate = useNavigate();
+
+  const [selectedSeats, setSelectedSeats] = React.useState([]);
+  const [totalFairPrices, setTotalFairPrices] = React.useState(0);
+
+  const handleSeatSelect = (seats) => {
+    setSelectedSeats(seats);
+    setTotalFairPrices(seats.length * 75); // Assuming each seat costs 75 MAD
+  };
+
+  const handleProceedToCheckout = () => {
+    if (selectedSeats.length === 0) {
+      alert('Please select at least one seat.');
+      return;
+    }
+    navigate(`/bus/bus-details/bus/bus-details/checkout?totalSeats=${selectedSeats.length}&totalFairPrices=${totalFairPrices}`);
+  };
+
   return (
     <div className="w-full lg:px-28 md:px-16 sm:px-7 px-4 mt-[13ch] mb-[10ch]">
       <div className="w-full grid grid-cols-2 gap-16 items-center">
@@ -39,17 +60,33 @@ const Detail = () => {
         </div>
         <div className="col-span-1 space-y-10">
           <div className="space-y-6">
-            {/* Destination card */}
-            <Destination />
-
-            {/* Departure card */}
-            <DepartTime />
+            <div className="space-y-4">
+              <h1 className="text-xl text-neutral-800 dark:text-neutral-100 font-medium">
+                Your Destination
+              </h1>
+              <div className="w-full flex items-center gap-x-3">
+                <div className="w-fit text-base font-semibold">
+                  From: <span className="ml-1.5">{from}</span>
+                </div>
+                <div className="flex-1">
+                  <div className="w-full h-[1px] border border-dashed border-neutral-200 dark:border-neutral-800/80"></div>
+                </div>
+                <div className="w-fit text-base font-semibold">
+                  To: <span className="ml-1.5">{to}</span>
+                </div>
+              </div>
+            </div>
           </div>
           {/* seat selection */}
-          <Seat />
+          <Seat onSeatSelect={handleSeatSelect} />
           {/* checkout Btn */}
           <div className="flex">
-            <Link to={'bus/bus-details/checkout'} className='w-fit bg-violet-600 text-neutral-50 font-medium text-base px-6 py-2 rounded-md hover:bg-violet-700 ease-in-out duration-300'>Proceed to Checkout</Link>
+            <button
+              onClick={handleProceedToCheckout}
+              className='w-fit bg-violet-600 text-neutral-50 font-medium text-base px-6 py-2 rounded-md hover:bg-violet-700 ease-in-out duration-300'
+            >
+              Proceed to Checkout
+            </button>
           </div>
         </div>
       </div>

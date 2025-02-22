@@ -1,14 +1,15 @@
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import HomeContainer from './pages/home_container/HomeContainer';
 import Bus from './pages/bus/Bus';
-import Detail from './pages/bus/Detail'
+import Detail from './pages/bus/Detail';
 import Checkout from './pages/checkout/Checkout';
+import About from './pages/about/About';
 
 function App() {
-
   return (
     <>
       <Router>
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomeContainer />} />
             <Route path="/bus" element={<Bus />} />
+            <Route path="/about" element={<About />} />
             <Route path="/bus/bus-details" element={<Detail />} />
             <Route path="/bus/bus-details/bus/bus-details/checkout" element={<Checkout />} />
           </Routes>
@@ -28,7 +30,7 @@ function App() {
         </div>
       </Router>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

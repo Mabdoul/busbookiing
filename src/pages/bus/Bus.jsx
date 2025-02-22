@@ -42,7 +42,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">
@@ -55,7 +55,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">
@@ -68,7 +68,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">
@@ -81,7 +81,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">
@@ -94,7 +94,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">
@@ -107,7 +107,7 @@ const Bus = () => {
        
        <div className="px-3 py-4 space-y-2">
         <div className="flex items-center justify-between">
-            <h1 className="text-xl font-semibold text-neutral-800 dark:text-neutral-50">
+            <h1 className="text-xl font-semibold text-neutral-900 dark:text-neutral-50">
                 Tourist Bus
             </h1>
             <p className="text-sm font-normal text-neutral-800 dark:text-neutral-50">

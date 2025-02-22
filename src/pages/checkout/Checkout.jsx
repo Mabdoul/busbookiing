@@ -1,6 +1,13 @@
-import React from "react";
+// src/pages/checkout/Checkout.js
+import React from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Checkout = () => {
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const totalSeats = queryParams.get('totalSeats'); // Get totalSeats from query parameters
+  const totalFairPrices = queryParams.get('totalFairPrices'); // Get totalFairPrices from query parameters
+
   return (
     <div className="w-full lg:px-28 md:px-16 sm:px-7 px-4 mt-[13ch] mb-[8ch] space-y-10">
       <div className="grid grid-cols-5 gap-16 items-start">
@@ -74,37 +81,32 @@ const Checkout = () => {
                 </h6>
                 <div className="w-full flex items-center gap-x-3">
                   <div className="w-fit text-base font-medium">
-                    From:- <span className="ml-1.5">Location 1</span>
+                    From: <span className="ml-1.5">Location 1</span>
                   </div>
                   <div className="flex-1 border-dashed border-neutral-400 dark:border-neutral-700/80 border"></div>
                   <div className="w-fit text-base font-medium">
-                    To:- <span className="ml-1.5">Location 4</span>
+                    To: <span className="ml-1.5">Location 4</span>
                   </div>
                 </div>
+              </div>
+              <div className="space-y-4">
+                <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
+                  Total Seats
+                </h6>
                 <div className="w-full flex items-center gap-x-3">
                   <div className="w-fit text-base font-medium">
-                    Arrive at:- <span className="ml-1.5">03:30 PM</span>
+                    Seats: <span className="ml-1.5">{totalSeats || 'N/A'}</span>
                   </div>
-                  <div className="flex-1 border-dashed border-neutral-400 dark:border-neutral-700/80 border"></div>
+                </div>
+              </div>
+              <div className="space-y-4">
+                <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
+                  Total Fair Prices
+                </h6>
+                <div className="w-full flex items-center gap-x-3">
                   <div className="w-fit text-base font-medium">
-                    Depart:- <span className="ml-1.5">04:00 PM</span>
+                    Total Fair Prices: <span className="ml-1.5">{totalFairPrices || 'N/A'} DH</span>
                   </div>
-                </div>
-                <div className="w-full flex justify-between">
-                  <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
-                    Total No. of Seats
-                  </h6>
-                  <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
-                    10 <span className="text-xs">(Driver side)</span>
-                  </h6>
-                </div>
-                <div className="w-full flex justify-between">
-                  <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
-                    Total Amount
-                  </h6>
-                  <h6 className="text-base text-neutral-700 dark:text-neutral-200 font-medium">
-                    MAD 5000
-                  </h6>
                 </div>
               </div>
             </div>
