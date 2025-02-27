@@ -12,9 +12,9 @@ const Navbar = () => {
 
     const navLinks = [
         { href: "/", label: "Home" },
-        { href: "/about", label: "About" },
+       
         { href: "/bus", label: "Bus" },
-        { href: "/services", label: "Services" },
+        { href: "/about", label: "About" },
     ]
 
     const handleClick = () => {

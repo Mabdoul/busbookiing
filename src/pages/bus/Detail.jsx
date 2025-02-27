@@ -1,9 +1,9 @@
-import React from 'react';
+// src/pages/bus/Detail.js
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
 import Bus from '../../assets/bus9.png';
 import Seat from '../../components/seat/Seat';
-import { Link } from 'react-router-dom';
 
 const Detail = () => {
   const location = useLocation();
@@ -12,19 +12,28 @@ const Detail = () => {
   const to = queryParams.get('to');
   const navigate = useNavigate();
 
-  const [selectedSeats, setSelectedSeats] = React.useState([]);
-  const [totalFairPrices, setTotalFairPrices] = React.useState(0);
+  const [selectedSeats, setSelectedSeats] = useState([]);
+  const [totalFairPrices, setTotalFairPrices] = useState();
 
-  const handleSeatSelect = (seats) => {
-    setSelectedSeats(seats);
-    setTotalFairPrices(seats.length * 75); // Assuming each seat costs 75 MAD
+  const handleSeatSelect = (seatNumber) => {
+    const updatedSeats = [...selectedSeats];
+    if (selectedSeats.includes(seatNumber)) {
+      setSelectedSeats(updatedSeats.filter((seat) => seat !== seatNumber));
+    } else {
+      if (selectedSeats.length < 10) {
+        setSelectedSeats([...updatedSeats, seatNumber]);
+      } else {
+        alert('You can only select a maximum of 10 seats');
+      }
+    }
+    setTotalFairPrices(selectedSeats.length * 75); // Assuming each seat costs 75 MAD
   };
 
   const handleProceedToCheckout = () => {
-    if (selectedSeats.length === 0) {
-      alert('Please select at least one seat.');
-      return;
-    }
+  if (selectedSeats.length === 0) {
+    alert('Please select at least one seat.');
+    return;
+  }
     navigate(`/bus/bus-details/bus/bus-details/checkout?totalSeats=${selectedSeats.length}&totalFairPrices=${totalFairPrices}`);
   };
 

@@ -55,7 +55,7 @@ const BusSeatLayout = ({ onSeatSelect }) => {
         <div className="flex-1 w-full flex">
           <div className="w-full flex-1 flex gap-x-5 items-stretch">
             <div className="w-10 h-full border-r-2 border-dashed border-neutral-300 dark:border-neutral-800">
-              <GiSteeringWheel className="text-3xl mt-6 text-violet-600 -rotate-90" />
+              <GiSteeringWheel className="text-3xl mt-6 text-violet-600 -rotate-0" />
             </div>
             {/* Seat Layout */}
             <div className="flex flex-col items-center">
@@ -83,25 +83,25 @@ const BusSeatLayout = ({ onSeatSelect }) => {
 
         <div className="space-y-3 w-28">
           <div className="flex items-center gap-x-2">
-            <MdOutlineChair className="text-lg text-neutral-500 -rotate-90 " />
+            <MdOutlineChair className="text-lg text-neutral-500 -rotate-0 " />
             <p className="text-neutral-900 dark:text-neutral-200 text-sm font-normal">
               Available
             </p>
           </div>
           <div className="flex items-center gap-x-2">
-            <MdOutlineChair className="text-lg text-red-500 -rotate-90 " />
+            <MdOutlineChair className="text-lg text-red-500 -rotate-0 " />
             <p className="text-neutral-900 dark:text-neutral-200 text-sm font-normal">
               Booked
             </p>
           </div>
           <div className="flex items-center gap-x-2">
-            <MdOutlineChair className="text-lg text-violet-500 -rotate-90 " />
+            <MdOutlineChair className="text-lg text-violet-500 -rotate-0 " />
             <p className="text-neutral-900 dark:text-neutral-200 text-sm font-normal">
               Selected
             </p>
           </div>
           <div className="flex items-center gap-x-2">
-            <RiMoneyDollarCircleLine className="text-lg text-neutral-500 -rotate-90 " />
+            <RiMoneyDollarCircleLine className="text-lg text-neutral-500 -rotate-0 " />
             <p className="text-neutral-900 dark:text-neutral-200 text-sm font-normal">
               MAD 75
             </p>
