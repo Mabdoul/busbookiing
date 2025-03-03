@@ -8,7 +8,7 @@ import Bus from './pages/bus/Bus';
 import Detail from './pages/bus/Detail';
 import Checkout from './pages/checkout/Checkout';
 import About from './pages/about/About';
-
+import BookingSuccess from './pages/BookingSuccess'
 function App() {
   return (
     <>
@@ -24,6 +24,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/bus/bus-details" element={<Detail />} />
             <Route path="/bus/bus-details/bus/bus-details/checkout" element={<Checkout />} />
+            <Route path="/booking-success" element={<BookingSuccess />} />
           </Routes>
           {/* Footer */}
           <Footer />
